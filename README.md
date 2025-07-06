@@ -5,6 +5,6 @@ Tutorial Notes on Fundamentals of Electronics (Analog Circuits).
 
 如需 PDF 版本请访问[个人主页](http://home.ustc.edu.cn/~pishooter/TA_Work/index.html)。
 
-特别感谢：[电子技术基础生存指北cx版（2022）](https://github.com/Anony-Minor/Dianji_zhibei-guidance)。
+特别感谢：[电子技术基础生存指北cx版（2022）](https://github.com/Anony-Minor/Dianji_zhibei-guidance)
 
-LaTeX 模板来源：[https://github.com/yuxtech/ShiJihuai-complex](https://github.com/yuxtech/ShiJihuai-complex)。
+LaTeX 模板来源：[https://github.com/yuxtech/ShiJihuai-complex](https://github.com/yuxtech/ShiJihuai-complex)
