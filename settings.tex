@@ -1,0 +1,201 @@
+\usepackage{etex,tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+
+\usepackage{fontspec}
+\IfFontExistsTF{FZShuSong-Z01}{
+  \PassOptionsToPackage{fontset=founder}{ctex}
+}{}
+
+\usepackage{xeCJK}
+\defaultCJKfontfeatures{Mapping=fullwidth-stop}
+
+\usepackage[heading]{ctex}
+\usepackage{manfnt,zhlineskip}
+\usepackage{indentfirst}
+
+\usepackage[T1]{fontenc}
+\renewcommand\rmdefault{ptm}
+\usepackage[centering,
+           top=2.54cm,bottom=2.54cm,right=2.9cm,left=2.9cm,
+           headsep=25pt,headheight=20pt]{geometry}
+\IfFileExists{mtpro2.sty}{
+  \usepackage[zswash,amsbb,straightbraces]{mtpro2}
+}{\usepackage{amssymb}}
+
+\usepackage{amsmath,mathrsfs}
+\usepackage{caption}
+\usepackage[perpage]{footmisc}
+\usepackage{extarrows}
+\usepackage{graphicx}
+
+\setmainfont{Times New Roman}
+
+\usepackage{pifont}
+\usepackage{imakeidx}
+\makeindex[
+    title={名词索引},
+    intoc=true,
+    columns=2,
+    columnsep=1cm,
+    columnseprule=true,
+    program=makeindex,
+    options={-s mkind.ist},
+    noautomatic=false
+]
+\indexsetup{
+    toclevel=chapter,
+    headers={名词索引}{名词索引},
+    othercode={
+    \renewcommand{\indexspace}{\smallskip}
+}
+}
+
+\usepackage[hyperindex]{hyperref}
+\hypersetup{bookmarksopen=true,bookmarksopenlevel=1,bookmarksnumbered=true,
+  pdftitle={电子技术基础指南},pdfauthor={罗钰涵},linktoc=all,CJKbookmarks=true,unicode,
+  colorlinks,linkcolor=blue,citecolor=red,urlcolor=blue,anchorcolor=green}
+
+\DeclareSymbolFont{ugmL}{OMX}{yhex}{m}{n}
+\DeclareMathAccent{\wideparen}{\mathord}{ugmL}{"F3}
+
+\IfFontExistsTF{FZShuSong-Z01}{
+  \setCJKmainfont[BoldFont={FZHei-B01},ItalicFont={FZKai-Z03}]{FZShuSong-Z01}
+}{}
+\IfFontExistsTF{Microsoft YaHei}{
+  \newCJKfontfamily\wryh{Microsoft YaHei}
+}{
+  \let\wryh\sffamily
+}
+\IfFontExistsTF{汉仪大宋简}{
+  \newCJKfontfamily\hyds{汉仪大宋简}
+}{
+  \let\hyds\rmfamily
+}
+
+\defaultfontfeatures{Mapping=tex-text}
+\XeTeXlinebreaklocale ”zh”
+\XeTeXlinebreakskip = 0pt plus 1pt
+
+\usepackage{tasks}
+\settasks
+{
+    label = (\arabic*),
+    item-indent = 1.7em,
+    label-width = 0.5em,
+    label-offset = 1.2em,
+    column-sep=10pt,
+    label-align=left,
+    after-item-skip=0pt
+}
+
+\usepackage{multicol}
+
+\everymath{\displaystyle}
+\lineskiplimit=2.5pt
+\lineskip=2.5pt plus .5pt
+
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+\renewcommand\parallel{\mathrel{/\mskip-2.5mu/}} %平行符号
+
+\allowdisplaybreaks[4]
+
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\fancyhf{}
+\fancyhead[LO]{\textit{\leftmark}}
+\fancyhead[RE]{\textit{\rightmark}}
+\fancyhead[LE,RO]{\thepage}
+
+\ctexset{punct=kaiming}
+
+\renewcommand\thempfootnote{\ding{45}}
+\newenvironment{note}{\par\CJKfamily{note}\noindent{\makebox[0pt][r]{\scriptsize\color{red!90}
+\textdbend\quad}\textbf{提示:}}}{\par}
+
+\usepackage{tocloft}
+\renewcommand\cftchapfont{\hyds}
+\renewcommand{\cftchapleader}{\cftdotfill{\cftdotsep}}
+\ctexset {
+	chapter = {
+		beforeskip = 0pt,
+		fixskip = true,
+		format = \Huge\bfseries,
+		nameformat = \rule{\linewidth}{1bp}\par\bigskip\hfill\label{chap\thechapter}\chapternamebox,
+		number = \arabic{chapter},
+		aftername = \par\medskip,
+		aftertitle = \par\bigskip\nointerlineskip\rule{\linewidth}{2bp}\par
+	},
+        section = {
+            titleformat+  = \hyds\label{sec\thesection}\raggedright
+        },
+        paragraph = {
+            runin = false
+    }
+}
+
+\newcommand\chapternamebox[1]{%
+\parbox{\ccwd}{\linespread{1}\selectfont\centering #1}}
+
+\usepackage{enumitem}
+
+\DeclareMathOperator{\ee}{\!\!\;\mathrm e}
+
+\newcommand\quan[1]{
+\tikz[baseline=(a.base)]\node(a)[inner sep=0.5pt,draw,circle]{$#1$};
+}
+
+\newcommand\closure[1]{%
+{}\mkern1mu\overline{\mkern-1mu#1}
+}
+
+\renewcommand\bar{\closure}
+
+\usepackage{amsthm}
+\makeatletter
+
+\setlist{itemsep=0pt}
+
+\newcommand{\me}{\mathrm{e}}
+\newcommand{\mi}{\mathrm{i}}
+
+\usepackage[subrefformat=parens]{subcaption}
+
+\usepackage{tkz-euclide}
+\catcode`\;=\active
+\newcommand{;}{\text{；}}
+\numberwithin{equation}{section}
+\usepackage{pifont}
+\renewcommand\thefootnote{\ding{\numexpr171+\value{footnote}}}
+
+\setcounter{tocdepth}{2}
+\renewcommand\contentsname{\color{blue}目\qquad 录}
+\definecolor{BLUE}{RGB}{0,0,255}
+
+\setlist{nosep}
+
+\usepackage{siunitx}
+
+\usepackage[backend=biber,style=gb7714-2015]{biblatex}
+\addbibresource[location=local]{references.bib}
+\DeclareFieldFormat[book,inbook,incollection]{volume}%
+{\iffieldequalstr{userd}{chinese}{\iffieldint{volume}%
+        {%
+        \bibstring{serialcn}#1\bibstring{volumecn}%
+        }{#1}%
+    }%
+    {\bibstring{volume}~#1}%
+}
+
+\makeatletter
+\def\cleardoublepage{\clearpage\if@twoside \ifodd\c@page\else
+	\begingroup
+	\mbox{}
+	\vspace*{\fill}
+	\thispagestyle{empty}
+	\newpage
+	\if@twocolumn\mbox{}\newpage\fi
+	\endgroup\fi\fi}
+\makeatother
+\clearpage\begingroup\pagestyle{empty}\cleardoublepage\endgroup

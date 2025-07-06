@@ -1,0 +1,51 @@
+\documentclass[UTF8,no-math,12pt,openany,table,dvipsnames,svgnames]{book}
+\input{settings}
+
+\begin{document}
+    \frontmatter
+    \begin{titlepage}
+	\vspace*{\fill}
+	\begin{center}
+		{\Huge\textbf{电子技术基础（模拟电路部分）\\[10pt]习题课讲义}}\\
+		\vspace*{50pt}
+		\textit{罗钰涵}
+	\end{center}
+	\vspace*{\stretch{3}}
+    \end{titlepage}
+
+    \thispagestyle{empty}
+    %\noindent{\Large{\textbf{更新日志}}}
+    %\medskip\\
+    %\begin{tabular}{ll}
+    
+    %\end{tabular}
+    
+    \pagenumbering{Roman}
+    \input{preface}
+    \cleardoublepage
+    \pdfbookmark[1]{目录}{contents}
+    \tableofcontents
+    
+    \mainmatter
+    \input{chap0.tex}
+    \input{chap1.tex}
+    \input{chap2.tex}
+    \input{chap3.tex}
+    \input{chap4.tex}
+
+    \appendix
+    \input{appendixA.tex}
+    %\input{appendixB.tex}
+    
+    \backmatter
+
+    %\input{chap/afterword}
+    \printbibliography[heading=bibintoc]
+    
+    \catcode`\,=13
+    \newcommand{,}{，}
+    \newpage
+    
+    %\indexprologue{这里列出本手册所涉及的名词.}
+    %\printindex
+\end{document} 
